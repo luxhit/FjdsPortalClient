@@ -1,25 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">移动税务平台</string>
     <!-- 主界面可选菜单 -->
-	<string name="option_menu_exit">退出</string>
-	<string name="option_menu_about">关于</string>
-	<string name="option_menu_whether_or_not_exit_message">您确认要退出吗？</string>
-	<string name="option_menu_about_info_message">税务手机平台</string>
-	<!-- 公用 -->
-	<string name="confirm">确认</string>
-	<string name="cancel">取消</string>
-	<string name="about">关于</string>
-	<string name="no_image">无图片</string>
-	<!-- 菜单 -->
-	<string name="home">首页</string>
-	<string name="public_service">公众服务</string>
-	<string name="mobile_tax">手机税务</string>
-	<string name="user_center">用户中心</string>
-	<string name="mobile_portal">手机门户</string>
-	<string name="levied_interactive">征纳互动</string>
-	<string name="public_platform">公众平台</string>
-	<string name="tax_platform">涉税平台</string>
-	<!-- 提示信息 -->
-	<string name="press_again_to_exit">再按一次退出</string>
+    <string name="option_menu_exit">退出</string>
+    <string name="option_menu_about">关于</string>
+    <string name="option_menu_whether_or_not_exit_message">您确认要退出吗？</string>
+    <string name="option_menu_about_info_message">税务手机平台</string>
+    <!-- 公用 -->
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="about">关于</string>
+    <string name="no_image">无图片</string>
+    <string name="dot">:</string>
+    <!-- 菜单 -->
+    <string name="home">首页</string>
+    <string name="public_service">公众服务</string>
+    <string name="mobile_tax">手机税务</string>
+    <string name="user_center">用户中心</string>
+    <string name="mobile_portal">手机门户</string>
+    <string name="levied_interactive">征纳互动</string>
+    <string name="public_platform">公众平台</string>
+    <string name="tax_platform">涉税平台</string>
+    <!-- 提示信息 -->
+    <string name="press_again_to_exit">再按一次退出</string>
+    <!-- 门户 -->
+    <!-- item项目 -->
+    <string name="pulish_time">发布时间</string>
+
 </resources>

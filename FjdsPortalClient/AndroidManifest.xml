@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fn.taxclientportal.ui.activity"
     android:versionCode="1"
@@ -48,6 +49,7 @@
         android:targetSdkVersion="21" />
 
     <application
+        android:name="com.fn.taxclientportal.ui.app.TaxAppContext"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -62,9 +64,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".GuideActivity" />
-        <activity android:name=".WebActivity" >
-        </activity>
-        <activity android:name=".MainActivity" >
+        <activity android:name=".WebActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ItemListActivity" />
+        <activity android:name=".ItemDetailActivity" >
         </activity>
     </application>
 

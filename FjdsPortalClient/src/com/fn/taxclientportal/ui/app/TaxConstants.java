@@ -22,10 +22,26 @@ public final class TaxConstants implements Serializable {
 	public static class App {
 		public static final String IS_INSTALLED = "is_installed";
 		
+		public static final String VERSION_CODE = "versionCode";
+		public static final String VERSION_NAME = "versionName";
+		
 		public static final int PUBLIC_SERVICE_TABS_COUNT = 4;
+		
 	}
 	
-	public static class Foler {
+	public static class Web {
+		public static final String CONTENT_TYPE = "text/html";
+		public static final String DEFAULT_ENCODING = "utf8";
+	}
+	
+	public static class Item {
+		public static final String TITLE = "title";
+		public static final String PULISH_DATE = "pulish_date";
+		public static final String CONTENT = "content";
+		public static final String ID = "id";
+	}
+	
+	public static class Folder {
 		/**
 		 * 扩展卡根目录
 		 */

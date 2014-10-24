@@ -3,13 +3,13 @@
  */
 package com.fn.taxclientportal.ui.activity;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.fn.taxclientportal.ui.task.LoadRSSFeed;
 
 /**
  * @author luxiang
@@ -46,6 +47,7 @@ public class MobilePortalFragment extends SherlockFragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.public_service_grid_layout,
 				container, false);
+
 		gridView = (GridView) rootView
 				.findViewById(R.id.public_service_gridview);
 		gridView.setOnItemClickListener(new OnItemClickListener() {
@@ -53,9 +55,13 @@ public class MobilePortalFragment extends SherlockFragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Intent intent = new Intent(MobilePortalFragment.this
-						.getActivity().getBaseContext(), WebActivity.class);
-				startActivity(intent);
+				// Intent intent = new Intent(MobilePortalFragment.this
+				// .getActivity().getBaseContext(), WebActivity.class);
+				// startActivity(intent);
+				new LoadRSSFeed(
+						getActivity(),
+						"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131012247341&rssType=AR&start=1&len=10&containAttach=true")
+						.execute();
 
 			}
 		});
