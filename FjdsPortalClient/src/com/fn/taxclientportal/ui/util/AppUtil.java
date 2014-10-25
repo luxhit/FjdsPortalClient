@@ -32,11 +32,11 @@ public final class AppUtil {
 		String id = null;
 		
 		if (text != null) {
-			Pattern p = Pattern.compile("([0-9]+)");
+			Pattern p = Pattern.compile("(.*/)([0-9]+)(.htm)");
 			Matcher m = p.matcher(text);
 			
 			if (m.find()) {
-				return m.group();
+				return m.group(2);
 			}
 		}
 		
