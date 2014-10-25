@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.fn.taxclientportal.support.rss.parse.RSSFeed;
 import com.fn.taxclientportal.ui.activity.R;
+import com.fn.taxclientportal.ui.util.AppUtil;
 
 /**
  * Adapter for the RSSFeed view. There's no need for a
@@ -63,7 +65,9 @@ public class ItemListAdapter extends BaseAdapter {
 		// Bit of formatting for adding the author
 		((TextView)listItem.findViewById(R.id.date)).setText(feed.getItem(position).getDate());
 		// Return the new list item
-		listItem.setTag(feed.getItem(position).getURL());
+		// 取文章id
+		String id = AppUtil.getArticleId(feed.getItem(position).getURL());
+		listItem.setTag(id);
 		return listItem;
 	}
 }
