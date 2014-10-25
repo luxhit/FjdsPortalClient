@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -20,6 +22,26 @@ import android.util.Log;
  *
  */
 public final class AppUtil {
+	
+	/**
+	 * 取文章id
+	 * @param text
+	 * @return
+	 */
+	public static String getArticleId (String text) {
+		String id = null;
+		
+		if (text != null) {
+			Pattern p = Pattern.compile("([0-9]+)");
+			Matcher m = p.matcher(text);
+			
+			if (m.find()) {
+				return m.group();
+			}
+		}
+		
+		return id;
+	}
 
 	public static void scaleImage(String pathOfInputImage, int dstWidth,
 			int dstHeight, String pathOfOutputImage) {
