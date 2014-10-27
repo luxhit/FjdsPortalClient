@@ -1,7 +1,7 @@
 package com.fn.taxclientportal.support.rss.parse;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.io.InputStreamReader;
 import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -13,6 +13,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import com.fn.taxclientportal.ui.app.TaxAppContext;
+import com.fn.taxclientportal.ui.app.TaxConstants;
 
 import android.util.Log;
 
@@ -42,7 +45,8 @@ public class DOMParser {
 				.newDocumentBuilder();
 
 		// Parse the XML
-		Document doc = builder.parse(new InputSource(url.openStream()));
+		Document doc = builder.parse(new InputSource(new InputStreamReader(url
+				.openStream(), TaxConstants.Rss.DEFAULT_ENCODING)));
 		// Normalize the data
 		doc.getDocumentElement().normalize();
 
