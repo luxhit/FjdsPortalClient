@@ -13,6 +13,13 @@
     <string name="about">关于</string>
     <string name="no_image">无图片</string>
     <string name="dot">:</string>
+    <string name="exception_subject">系统异常</string>
+    
+    <string name="exit">退出</string>
+    <!-- 异常 -->
+    <string name="send_error_report_success">发送完毕</string>
+    <string name="send_error_report_fail">发送失败</string>
+    <string name="send_error_report_ing">发送错误报告</string>
     <!-- 菜单 -->
     <string name="home">首页</string>
     <string name="public_service">公众服务</string>
