@@ -3,6 +3,12 @@
  */
 package com.fn.taxclientportal.ui.app;
 
+import static com.fn.taxclientportal.ui.app.TaxConstants.Mail.FJDS_MAIL_ACCOUNT;
+import static com.fn.taxclientportal.ui.app.TaxConstants.Mail.FJDS_MAIL_PASSWORD;
+
+import java.util.Stack;
+
+import android.app.Activity;
 import android.app.Application;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -11,6 +17,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.androidquery.util.AQUtility;
+import com.fn.taxclientportal.support.mail.Mail;
 
 /**
  * 全局变量
@@ -21,8 +29,14 @@ import com.actionbarsherlock.app.ActionBar;
 public class TaxAppContext extends Application {
 	protected static final String TAG = TaxAppContext.class.getSimpleName();
 
+	private static Stack<Activity> activitiesStack = new Stack<Activity>();
+
 	public static int versionCode;
 	public static String versionName;
+
+	public static boolean isDebug = false;
+	public static boolean isAutoMail = true;
+	public static Mail mail = new Mail(FJDS_MAIL_ACCOUNT, FJDS_MAIL_PASSWORD);
 
 	public static String[] mainImageFilePaths = {
 			TaxConstants.Folder.IMAGES_FOLDER + "20140906_173330.jpg",
@@ -41,6 +55,11 @@ public class TaxAppContext extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		// 若为生产模式，设置全局线程异常处理
+		AQUtility.setDebug(isDebug);
+
+		ErrorReporter errorReporter = new ErrorReporter(this);
+		AQUtility.setExceptionHandler(errorReporter);
 
 		// 获取包实例
 		PackageManager pm = this.getPackageManager();
@@ -59,4 +78,28 @@ public class TaxAppContext extends Application {
 
 	}
 
+	public static Activity addActivity(Activity activity) {
+		activitiesStack.push(activity);
+
+		return activity;
+	}
+
+	public static Activity currentActivity() {
+		return activitiesStack.lastElement();
+	}
+
+	public static Activity removeActivity(Activity activity) {
+		activitiesStack.remove(activity);
+		activity.finish();
+		activity = null;
+
+		return activity;
+	}
+
+	public static void removeAllActivities() {
+		for (Activity a = activitiesStack.pop(); !activitiesStack.isEmpty();) {
+			a.finish();
+			a = null;
+		}
+	}
 }

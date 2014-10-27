@@ -48,6 +48,11 @@ public final class TaxConstants implements Serializable {
 		public static final String DEFAULT_ENCODING = "utf8";
 	}
 	
+	public static class Mail {
+		public static final String FJDS_MAIL_ACCOUNT = "fjds2014@126.com";
+		public static final String FJDS_MAIL_PASSWORD = "a123qwe";
+	}
+	
 	public static class Rss {
 		public static final String DEFAULT_ENCODING = "utf8";
 	}
