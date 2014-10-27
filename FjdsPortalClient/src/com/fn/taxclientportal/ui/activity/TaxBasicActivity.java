@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.androidquery.AQuery;
+import com.fn.taxclientportal.ui.app.TaxAppContext;
 
 /**
  * UI基类
@@ -24,8 +25,14 @@ public class TaxBasicActivity extends SherlockActivity {
 
 		aquery = new AQuery(this);
 
-		
+		TaxAppContext.addActivity(this);
 		// abar.setDisplayHomeAsUpEnabled(true);
 	};
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		
+		TaxAppContext.removeActivity(this);
+	}
 }

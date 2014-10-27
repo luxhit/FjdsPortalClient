@@ -28,7 +28,6 @@ import android.widget.Toast;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
@@ -44,7 +43,7 @@ import com.fn.taxclientportal.ui.util.AppUtil;
  * @version 1.0
  *
  */
-public class MainActivity extends SherlockFragmentActivity {
+public class MainActivity extends TaxBasicFragmentActivity {
 	protected static final String TAG = MainActivity.class.getSimpleName();
 
 	private AutoScrollViewPager mImageViewPager; // 图片导航页
