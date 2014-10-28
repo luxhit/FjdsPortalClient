@@ -12,7 +12,6 @@ import org.fjltax.sa.pojo.Khdcs;
 import org.fjltax.sa.pojo.PcModuleCode;
 import org.fjltax.sa.pojo.ResEnter;
 import org.fjltax.sa.pojo.Tzgg;
-import org.fjltax.sa.pojo.User;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
@@ -32,7 +31,6 @@ import com.androidquery.callback.AjaxStatus;
 import com.fn.taxclientportal.ui.app.TaxAppContext;
 import com.fn.taxclientportal.ui.app.TaxConstants;
 import com.fn.taxclientportal.ui.app.TaxConstants.App;
-import com.fn.taxclientportal.ui.util.AppApi;
 import com.google.gson.Gson;
 
 /**
@@ -51,7 +49,7 @@ public class SplashScreenActivity extends TaxBasicActivity {
 
 		this.getSupportActionBar().hide();
 
-		new Handler().post(new Runnable() {
+		new Handler().postDelayed(new Runnable() {
 
 			public void run() {
 				initGlobalParams();
@@ -79,7 +77,10 @@ public class SplashScreenActivity extends TaxBasicActivity {
 				map.put("req", "enter");
 				map.put("channelid", channelid);
 				map.put("imei", TaxAppContext.imei);
+				map.put("ip", TaxAppContext.ip);
 				map.put("device", TaxAppContext.device);
+
+				Log.d(TAG, "map:" + map.toString());
 
 				aquery.ajax(TaxConstants.Url.API_URL, map, JSONObject.class,
 						new AjaxCallback<JSONObject>() {
@@ -110,7 +111,7 @@ public class SplashScreenActivity extends TaxBasicActivity {
 
 			}
 
-		});
+		}, 3000l);
 	}
 
 	@SuppressLint("NewApi")
