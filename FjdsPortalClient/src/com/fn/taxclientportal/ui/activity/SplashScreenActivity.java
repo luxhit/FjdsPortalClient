@@ -3,6 +3,18 @@
  */
 package com.fn.taxclientportal.ui.activity;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.fjltax.sa.pojo.Gdtp;
+import org.fjltax.sa.pojo.Khdcs;
+import org.fjltax.sa.pojo.PcModuleCode;
+import org.fjltax.sa.pojo.ResEnter;
+import org.fjltax.sa.pojo.Tzgg;
+import org.fjltax.sa.pojo.User;
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,8 +27,13 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.androidquery.callback.AjaxCallback;
+import com.androidquery.callback.AjaxStatus;
 import com.fn.taxclientportal.ui.app.TaxAppContext;
+import com.fn.taxclientportal.ui.app.TaxConstants;
 import com.fn.taxclientportal.ui.app.TaxConstants.App;
+import com.fn.taxclientportal.ui.util.AppApi;
+import com.google.gson.Gson;
 
 /**
  * @author luxiang
@@ -31,35 +48,69 @@ public class SplashScreenActivity extends TaxBasicActivity {
 		super.onCreate(savedInstanceState);
 
 		this.setContentView(R.layout.splash_layout);
-		
+
 		this.getSupportActionBar().hide();
 
-		new Handler().postDelayed(new Runnable() {
+		new Handler().post(new Runnable() {
 
 			public void run() {
 				initGlobalParams();
 
-//				ProgressDialog myDialog = ProgressDialog.show(
-//						SplashScreenActivity.this, "", "Loading", true);
+				// ProgressDialog myDialog = ProgressDialog.show(
+				// SplashScreenActivity.this, "", "Loading", true);
 
-				SharedPreferences sharedPreferences =  PreferenceManager
+				SharedPreferences sharedPreferences = PreferenceManager
 						.getDefaultSharedPreferences(SplashScreenActivity.this);
-				
+
 				if (!sharedPreferences.getBoolean(App.IS_INSTALLED, false)) {
 					Intent intent = new Intent(SplashScreenActivity.this,
 							GuideActivity.class);
 					SplashScreenActivity.this.startActivity(intent);
-	//				myDialog.dismiss();
-					
+					// myDialog.dismiss();
+
 				} else {
 					Intent intent = new Intent(SplashScreenActivity.this,
 							MainActivity.class);
 					SplashScreenActivity.this.startActivity(intent);
 				}
-				SplashScreenActivity.this.finish();
+				String channelid = TaxAppContext.umengChannel;
+
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("req", "enter");
+				map.put("channelid", channelid);
+				map.put("imei", TaxAppContext.imei);
+				map.put("device", TaxAppContext.device);
+
+				aquery.ajax(TaxConstants.Url.API_URL, map, JSONObject.class,
+						new AjaxCallback<JSONObject>() {
+
+							@Override
+							public void callback(String url, JSONObject object,
+									AjaxStatus status) {
+								String json = object.toString();
+								Log.d(TAG, "json:" + json);
+								ResEnter re = new Gson().fromJson(json,
+										ResEnter.class);
+								// 成功
+								if (re.getCode() == 0) {
+									// 滚动图片列表
+									List<Gdtp> gdtpList = re.getGdtpList();
+									// 客户端参数列表
+									List<Khdcs> khdcsList = re.getKhdcsList();
+									// 模块列表
+									List<PcModuleCode> pcModuleCodeList = re
+											.getPcModuleCodeList();
+									// 通知公告列表
+									List<Tzgg> tzggList = re.getTzggList();
+								}
+								SplashScreenActivity.this.finish();
+							}
+
+						});
+
 			}
 
-		}, 2000);// 3 Seconds
+		});
 	}
 
 	@SuppressLint("NewApi")
