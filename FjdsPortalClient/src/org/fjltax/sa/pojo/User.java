@@ -1,39 +1,39 @@
 package org.fjltax.sa.pojo;
 
 public class User {
-  private long hhId;   //ç”¨æˆ·ID
-  private String sjhm;   //æ‰‹æœºå·ç 
-  private String hhnc;   //ç”¨æˆ·æ˜µç§°
-  private String hhmm;   //ç”¨æˆ·å¯†ç 
-  private String dzyx;   //ç”µå­é‚®ç®±
-  private String xb;   //1 ç”· 2 å¥³
-  private String txwj;   //å¤´åƒæ–‡ä»¶
-  private String sf;   //çœä»½
-  private String cs;   //åŸå¸‚
-  private String sr;   //ç”Ÿæ—¥
-  private String zjbdzt;   //0 æœªç»‘å®š 1 å®¡æ ¸ä¸­ 2 æ­£å¸¸ç»‘å®š 9 ç»‘å®šå¤±æ•ˆ
-  private String zjlxDm;   //è¯ä»¶ç±»å‹
-  private String zjhm;   //è¯ä»¶å·ç 
-  private String zjtpwj;   //è¯ä»¶å›¾ç‰‡æ–‡ä»¶
-  private String wbbdzt;   //0 æœªç»‘å®š 1 å®¡æ ¸ä¸­ 2 æ­£å¸¸ç»‘å®š 9 ç»‘å®šå¤±æ•ˆ
-  private String sbbdsm;   //ç½‘æŠ¥ç»‘å®šè¯´æ˜
-  private String wbhhm;   //ç½‘æŠ¥ç”¨æˆ·å
-  private String wbhhmm;   //ç½‘æŠ¥ç”¨æˆ·å¯†ç 
-  private String nsrdzdah;   //çº³ç¨äººç”µå­æ¡£æ¡ˆå·
-  private String dnbm;   //ç”µè„‘ç¼–ç 
-  private String nsrmc;   //çº³ç¨äººåç§°
-  private long gzs;   //å…³æ³¨æ•°
-  private long fss;   //ç²‰ä¸æ•°
-  private String imei;   //æ‰‹æœºIMEI
-  private String sfzdw;   //æ˜¯å¦æ‰¾åˆ°æˆ‘
-  private String jd;   //ç»åº¦
-  private String wd;   //çº¬åº¦
-  private long hhjf;   //ç”¨æˆ·ç§¯åˆ†
-  private String zcsj;   //æ³¨å†Œæ—¶é—´
-  private String dlsj;   //ç™»å½•æ—¶é—´
-  private String dlId;   //ç™»å½•ID
-  private String zt;   //1 æ­£å¸¸ 2 éæ­£å¸¸ 3 åˆ é™¤
-  private String ztsj;   //çŠ¶æ€æ—¶é—´
+  private long hhId;   //ÓÃ»§ID
+  private String sjhm;   //ÊÖ»úºÅÂë
+  private String hhnc;   //ÓÃ»§êÇ³Æ
+  private String hhmm;   //ÓÃ»§ÃÜÂë
+  private String dzyx;   //µç×ÓÓÊÏä
+  private String xb;   //1 ÄĞ 2 Å®
+  private String txwj;   //Í·ÏñÎÄ¼ş
+  private String sf;   //Ê¡·İ
+  private String cs;   //³ÇÊĞ
+  private String sr;   //ÉúÈÕ
+  private String zjbdzt;   //0 Î´°ó¶¨ 1 ÉóºËÖĞ 2 Õı³£°ó¶¨ 9 °ó¶¨Ê§Ğ§
+  private String zjlxDm;   //Ö¤¼şÀàĞÍ
+  private String zjhm;   //Ö¤¼şºÅÂë
+  private String zjtpwj;   //Ö¤¼şÍ¼Æ¬ÎÄ¼ş
+  private String wbbdzt;   //0 Î´°ó¶¨ 1 ÉóºËÖĞ 2 Õı³£°ó¶¨ 9 °ó¶¨Ê§Ğ§
+  private String wbbdsm;   //Íø±¨°ó¶¨ËµÃ÷
+  private String wbhhm;   //Íø±¨ÓÃ»§Ãû
+  private String wbhhmm;   //Íø±¨ÓÃ»§ÃÜÂë
+  private String nsrdzdah;   //ÄÉË°ÈËµç×Óµµ°¸ºÅ
+  private String dnbm;   //µçÄÔ±àÂë
+  private String nsrmc;   //ÄÉË°ÈËÃû³Æ
+  private long gzs;   //¹Ø×¢Êı
+  private long fss;   //·ÛË¿Êı
+  private String imei;   //ÊÖ»úIMEI
+  private String sfzdw;   //ÊÇ·ñÕÒµ½ÎÒ
+  private String jd;   //¾­¶È
+  private String wd;   //Î³¶È
+  private long hhjf;   //ÓÃ»§»ı·Ö
+  private String zcsj;   //×¢²áÊ±¼ä
+  private String dlsj;   //µÇÂ¼Ê±¼ä
+  private String dlId;   //µÇÂ¼ID
+  private String zt;   //1 Õı³£ 2 ·ÇÕı³£ 3 É¾³ı
+  private String ztsj;   //×´Ì¬Ê±¼ä
   public long getHhId() {
     return hhId;
   }
@@ -124,11 +124,12 @@ public class User {
   public void setWbbdzt(String wbbdzt) {
     this.wbbdzt = wbbdzt;
   }
-  public String getSbbdsm() {
-    return sbbdsm;
+  
+  public String getWbbdsm() {
+    return wbbdsm;
   }
-  public void setSbbdsm(String sbbdsm) {
-    this.sbbdsm = sbbdsm;
+  public void setWbbdsm(String wbbdsm) {
+    this.wbbdsm = wbbdsm;
   }
   public String getWbhhm() {
     return wbhhm;

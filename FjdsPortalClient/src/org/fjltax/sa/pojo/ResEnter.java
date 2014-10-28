@@ -1,6 +1,6 @@
 package org.fjltax.sa.pojo;
 /**
- * å…¥å£æ¥å£ï¼Œå–å¾—æ¨¡å—åˆ—è¡¨ã€æ»šåŠ¨å›¾ç‰‡åˆ—è¡¨ã€æ¶ˆæ¯åˆ—è¡¨
+ * Èë¿Ú½Ó¿Ú£¬È¡µÃÄ£¿éÁĞ±í¡¢¹ö¶¯Í¼Æ¬ÁĞ±í¡¢ÏûÏ¢ÁĞ±í
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import java.util.List;
 public class ResEnter {
   private int code=0;
   private String msg="";
-  private List<PcModuleCode> pcModuleCodeList=new ArrayList();  //æ¨¡å—åˆ—è¡¨
-  private List<Tzgg> tzggList=new ArrayList();  //é€šçŸ¥å…¬å‘Šåˆ—è¡¨
-  private List<Gdtp> gdtpList=new ArrayList();  //æ»šåŠ¨å›¾ç‰‡åˆ—è¡¨
-  private List<Khdcs> khdcsList=new ArrayList();  //å®¢æˆ·ç«¯å‚æ•°åˆ—è¡¨
+  private List<PcModuleCode> pcModuleCodeList=new ArrayList();  //Ä£¿éÁĞ±í
+  private List<Tzgg> tzggList=new ArrayList();  //Í¨Öª¹«¸æÁĞ±í
+  private List<Gdtp> gdtpList=new ArrayList();  //¹ö¶¯Í¼Æ¬ÁĞ±í
+  private List<Khdcs> khdcsList=new ArrayList();  //¿Í»§¶Ë²ÎÊıÁĞ±í
 
   public int getCode() {
     return code;

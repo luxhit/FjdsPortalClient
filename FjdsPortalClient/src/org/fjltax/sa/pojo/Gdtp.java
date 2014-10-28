@@ -1,12 +1,12 @@
 package org.fjltax.sa.pojo;
 
 public class Gdtp {
-  private long tpId;   //å›¾ç‰‡ID
-  private String tpbt;   //å›¾ç‰‡æ ‡é¢˜
-  private String tpdz;   //å›¾ç‰‡åœ°å€
-  private String zsfs;   //1 é€šçŸ¥é¡µé¢ 2 httpç½‘é¡µï¼Œå›ºå®šä¼ å…¥æ¶ˆæ¯IDå’Œç”¨æˆ·ID 3 activityï¼Œå›ºå®šä¼ å…¥æ¶ˆæ¯ID
-  private String zsdz;   //å±•ç¤ºåœ°å€
-  private String zt;   //çŠ¶æ€
+  private long tpId;   //Í¼Æ¬ID
+  private String tpbt;   //Í¼Æ¬±êÌâ
+  private String tpdz;   //Í¼Æ¬µØÖ·
+  private String zsfs;   //1 Í¨ÖªÒ³Ãæ 2 httpÍøÒ³£¬¹Ì¶¨´«ÈëÏûÏ¢IDºÍÓÃ»§ID 3 activity£¬¹Ì¶¨´«ÈëÏûÏ¢ID
+  private String zsdz;   //Õ¹Ê¾µØÖ·
+  private String zt;   //×´Ì¬
   public long getTpId() {
     return tpId;
   }

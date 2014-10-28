@@ -1,12 +1,9 @@
 package org.fjltax.sa.pojo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Result {
-  private int code=0;  //0 正常返回， 否则其他返回
+public class ResUser {
+  private int code=0;
   private String msg="";
-  
+  private User user=new User();
   public int getCode() {
     return code;
   }
@@ -19,5 +16,12 @@ public class Result {
   public void setMsg(String msg) {
     this.msg = msg;
   }
+  public User getUser() {
+    return user;
+  }
+  public void setUser(User user) {
+    this.user = user;
+  }
   
+
 }

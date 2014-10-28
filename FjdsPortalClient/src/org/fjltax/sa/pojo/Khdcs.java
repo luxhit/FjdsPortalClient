@@ -1,14 +1,14 @@
 package org.fjltax.sa.pojo;
 /**
- * å®¢æˆ·ç«¯å‚æ•°ï¼Œæ§åˆ¶å®¢æˆ·ç«¯çš„è¿è¡Œ
+ * ¿Í»§¶Ë²ÎÊı£¬¿ØÖÆ¿Í»§¶ËµÄÔËĞĞ
  * @author Su
  *
  */
 public class Khdcs {
-  private String csm;   //å‚æ•°å
-  private String csz;   //å€¼
-  private String cssm;   //è¯´æ˜
-  private String zt;   //çŠ¶æ€
+  private String csm;   //²ÎÊıÃû
+  private String csz;   //Öµ
+  private String cssm;   //ËµÃ÷
+  private String zt;   //×´Ì¬
   public String getCsm() {
     return csm;
   }

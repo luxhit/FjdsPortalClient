@@ -1,13 +1,13 @@
 package org.fjltax.sa.pojo;
 
 public class Tzgg {
-  private long ggId;   //æ¶ˆæ¯ID
-  private String ggbt;   //æ¶ˆæ¯æ ‡é¢˜
-  private String ggnr;   //æ¶ˆæ¯å†…å®¹
-  private String zsfs;   //1 é€šçŸ¥é¡µé¢ 2 httpç½‘é¡µï¼Œå›ºå®šä¼ å…¥æ¶ˆæ¯IDå’Œç”¨æˆ·ID 3 activityï¼Œå›ºå®šä¼ å…¥æ¶ˆæ¯ID
-  private String zsdz;   //å±•ç¤ºåœ°å€
-  private String zt;   //çŠ¶æ€
-  private String ztsj;   //ç”Ÿæˆæ—¶é—´
+  private long ggId;   //ÏûÏ¢ID
+  private String ggbt;   //ÏûÏ¢±êÌâ
+  private String ggnr;   //ÏûÏ¢ÄÚÈİ
+  private String zsfs;   //1 Í¨ÖªÒ³Ãæ 2 httpÍøÒ³£¬¹Ì¶¨´«ÈëÏûÏ¢IDºÍÓÃ»§ID 3 activity£¬¹Ì¶¨´«ÈëÏûÏ¢ID
+  private String zsdz;   //Õ¹Ê¾µØÖ·
+  private String zt;   //×´Ì¬
+  private String ztsj;   //Éú³ÉÊ±¼ä
   public long getGgId() {
     return ggId;
   }

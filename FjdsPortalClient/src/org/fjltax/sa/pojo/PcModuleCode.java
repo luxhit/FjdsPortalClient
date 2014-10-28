@@ -1,23 +1,23 @@
 package org.fjltax.sa.pojo;
 
 public class PcModuleCode {
-  private String moduleCode;   //æ¨¡å—ä»£ç ï¼Œäº”ä½
-  private String moduleName;   //æ¨¡å—åç§°
-  private String moduleType;   //1ï¼šä¸»æ¨¡å—ï¼Œ2ï¼šåŠŸèƒ½æ¨¡å—ï¼Œ0ï¼Œå…¶ä»–æ¨¡å—ç±»å‹ï¼ˆå¦‚ç”¨äºèœå•ç”Ÿæˆå±‚æ¬¡ï¼Œå…¬å…±ï¼‰
-  private String funcType;   //è¯¥æ¨¡å—çš„ä½¿ç”¨åŠŸèƒ½ç±»å‹ï¼šæ˜¯å¦éœ€è¦ç™»å½• 1 å…¬å…±ï¼Œä½¿ç”¨ä¸éœ€è¦ç™»å½• 2 ä¸ªäººæ¨¡å—ï¼Œä½¿ç”¨éœ€è¦ç™»å½•å¹¶ç»‘å®šèº«ä»½è¯å· 3 ä¼ä¸šæ¨¡å—ï¼Œä½¿ç”¨éœ€è¦ç™»å½•å¹¶ç»‘å®šç½‘æŠ¥ç”¨æˆ·
-  private String callMode;   //1 å†…éƒ¨æ¨¡å— 2 httpé“¾æ¥ 3 å¤–éƒ¨æ¨¡å—ï¼ˆä¸»ç•Œé¢ï¼‰ 4 å¤–éƒ¨æ¨¡å—ï¼ˆç‰¹å®šç•Œé¢ï¼‰
-  private String dlls;   //è°ƒç”¨çš„æ¨¡å—åï¼Œæ ¹æ®è°ƒç”¨æ–¹æ³•ä¸åŒé…ç½®ä¸åŒçš„å€¼ï¼Œå¦‚æ¨¡å—æ–¹æ³•åï¼Œhttpé“¾æ¥ç­‰ã€‚
-  private String ver;   //å‰ç«¯ç¨‹åºçš„æœ€ä½ç‰ˆæœ¬
-  private String moduleDesc;   //æ¨¡å—æè¿°
-  private String grade;   //0 é€šç”¨æ¨¡å— 1 åˆ†é…æƒé™æ¨¡å—ï¼Œæš‚æ— ç”¨ï¼Œ
-  private String dutyGrade;   //è§notesï¼Œæš‚æ— ç”¨
-  private String shortCut;   //å‰ç«¯è‡ªåŠ¨ç”Ÿæˆèœå•ä½¿ç”¨ï¼Œæš‚ä¸ç”¨
-  private String menuLevel;   //å‰ç«¯è‡ªåŠ¨ç”Ÿæˆèœå•ä½¿ç”¨ï¼ˆå®šä¹‰èœå•å±‚æ¬¡ï¼‰ï¼Œ1è¡¨ç¤ºä¸»èœå•ï¼Œ2è¡¨ç¤º2çº§èœå•...
-  private String parentMenu;   //å®šä¹‰çˆ¶èœå•
-  private String iconFile;   //å›¾æ ‡æ–‡ä»¶çš„ä¸‹è½½åœ°å€
-  private long noteCount;   //æé†’æ•°ï¼Œç”¨äºåœ¨å›¾æ ‡å³ä¸Šè§’ç”Ÿæˆçº¢åœˆæé†’ï¼Œ0è¡¨ç¤ºæ²¡æœ‰ä¸æé†’
-  private String ifCust;   //æ˜¯å¦ç¼ºçœå®šåˆ¶æ¨¡å—ï¼Œç”¨äºåˆå§‹åŒ–å®šåˆ¶æ¨¡å—ï¼ˆç¬¬ä¸€æ¬¡ä½¿ç”¨è½¯ä»¶ï¼‰
-  private String sts;   //â€˜Aâ€™è¡¨ç¤ºå†ç”¨ï¼Œâ€˜P'è¡¨ç¤ºå†å²ï¼Œæ‰€æœ‰çš„å¯¹æ­¤è¡¨çš„æŸ¥è¯¢éƒ½åº”åŠ æ­¤æ¡ä»¶
+  private String moduleCode;   //Ä£¿é´úÂë£¬ÎåÎ»
+  private String moduleName;   //Ä£¿éÃû³Æ
+  private String moduleType;   //1£ºÖ÷Ä£¿é£¬2£º¹¦ÄÜÄ£¿é£¬0£¬ÆäËûÄ£¿éÀàĞÍ£¨ÈçÓÃÓÚ²Ëµ¥Éú³É²ã´Î£¬¹«¹²£©
+  private String funcType;   //¸ÃÄ£¿éµÄÊ¹ÓÃ¹¦ÄÜÀàĞÍ£ºÊÇ·ñĞèÒªµÇÂ¼ 1 ¹«¹²£¬Ê¹ÓÃ²»ĞèÒªµÇÂ¼ 2 ¸öÈËÄ£¿é£¬Ê¹ÓÃĞèÒªµÇÂ¼²¢°ó¶¨Éí·İÖ¤ºÅ 3 ÆóÒµÄ£¿é£¬Ê¹ÓÃĞèÒªµÇÂ¼²¢°ó¶¨Íø±¨ÓÃ»§
+  private String callMode;   //1 ÄÚ²¿Ä£¿é 2 httpÁ´½Ó 3 Íâ²¿Ä£¿é£¨Ö÷½çÃæ£© 4 Íâ²¿Ä£¿é£¨ÌØ¶¨½çÃæ£©
+  private String dlls;   //µ÷ÓÃµÄÄ£¿éÃû£¬¸ù¾İµ÷ÓÃ·½·¨²»Í¬ÅäÖÃ²»Í¬µÄÖµ£¬ÈçÄ£¿é·½·¨Ãû£¬httpÁ´½ÓµÈ¡£
+  private String ver;   //Ç°¶Ë³ÌĞòµÄ×îµÍ°æ±¾
+  private String moduleDesc;   //Ä£¿éÃèÊö
+  private String grade;   //0 Í¨ÓÃÄ£¿é 1 ·ÖÅäÈ¨ÏŞÄ£¿é£¬ÔİÎŞÓÃ£¬
+  private String dutyGrade;   //¼ûnotes£¬ÔİÎŞÓÃ
+  private String shortCut;   //Ç°¶Ë×Ô¶¯Éú³É²Ëµ¥Ê¹ÓÃ£¬Ôİ²»ÓÃ
+  private String menuLevel;   //Ç°¶Ë×Ô¶¯Éú³É²Ëµ¥Ê¹ÓÃ£¨¶¨Òå²Ëµ¥²ã´Î£©£¬1±íÊ¾Ö÷²Ëµ¥£¬2±íÊ¾2¼¶²Ëµ¥...
+  private String parentMenu;   //¶¨Òå¸¸²Ëµ¥
+  private String iconFile;   //Í¼±êÎÄ¼şµÄÏÂÔØµØÖ·
+  private long noteCount;   //ÌáĞÑÊı£¬ÓÃÓÚÔÚÍ¼±êÓÒÉÏ½ÇÉú³ÉºìÈ¦ÌáĞÑ£¬0±íÊ¾Ã»ÓĞ²»ÌáĞÑ
+  private String ifCust;   //ÊÇ·ñÈ±Ê¡¶¨ÖÆÄ£¿é£¬ÓÃÓÚ³õÊ¼»¯¶¨ÖÆÄ£¿é£¨µÚÒ»´ÎÊ¹ÓÃÈí¼ş£©
+  private String sts;   //¡®A¡¯±íÊ¾ÔÙÓÃ£¬¡®P'±íÊ¾ÀúÊ·£¬ËùÓĞµÄ¶Ô´Ë±íµÄ²éÑ¯¶¼Ó¦¼Ó´ËÌõ¼ş
   private String a1;   //A1
   private String a2;   //A2
   private String a3;   //A3
