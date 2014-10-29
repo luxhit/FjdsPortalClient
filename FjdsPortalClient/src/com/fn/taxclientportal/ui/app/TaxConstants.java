@@ -28,19 +28,20 @@ public final class TaxConstants implements Serializable {
 		public static final int PUBLIC_SERVICE_TABS_COUNT = 4;
 		
 		public static final int MOBILE_PORTAL_NEWS = 0x0101;
-		public static final int MOBILE_PORTAL_SUMMARY = 0x0102;
-		public static final int MOBILE_PORTAL_GUIDE = 0x0103;
-		public static final int MOBILE_PORTAL_NOTICE = 0x0104;
-		public static final int MOBILE_PORTAL_POLICY = 0x0105;
-		public static final int MOBILE_PORTAL_ORG_INCOME = 0x0106;
-		public static final int MOBILE_PORTAL_PLAN_SUMMARY = 0x0107;
-		public static final int MOBILE_PORTAL_HUMAN_INFO = 0x0108;
+		public static final int MOBILE_PORTAL_INFORMATION_PUBLIC = 0x0102;
+		public static final int MOBILE_PORTAL_POLICY = 0x0103;
+		public static final int MOBILE_PORTAL_ORG_INCOME = 0x0104;
+		public static final int MOBILE_PORTAL_PLAN_SUMMARY = 0x0105;
+		public static final int MOBILE_PORTAL_HUMAN_INFO = 0x0106;
 	}
 	
 	public static class Url {
 		public static final String PROTOCEL_PREFIX = "http://";
 		public static final String BASS_URL = PROTOCEL_PREFIX + "www.fj-l-tax.gov.cn/";
 		public static final String ARTICLE_URL_PREFIX = BASS_URL + "servlet/ArticleServlet?arId=";
+		
+		public static final String API_URL = "http://192.168.0.10:7890/sa/SaApi";
+		public static final String API_DEFAULT_ENCODING = "utf8";
 	}
 	
 	public static class Web {
@@ -61,7 +62,7 @@ public final class TaxConstants implements Serializable {
 		public static final String TITLE = "title";
 		public static final String PULISH_DATE = "pulish_date";
 		public static final String CONTENT = "content";
-		public static final String ID = "id";
+		public static final String URL = "id";
 	}
 	
 	public static class Folder {
