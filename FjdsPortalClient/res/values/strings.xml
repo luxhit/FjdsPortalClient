@@ -20,7 +20,7 @@
     <string name="send_error_report_success">发送完毕</string>
     <string name="send_error_report_fail">发送失败</string>
     <string name="send_error_report_ing">发送错误报告</string>
-    <!-- 菜单 -->
+    <!-- 一级菜单 -->
     <string name="home">首页</string>
     <string name="public_service">公众服务</string>
     <string name="mobile_tax">手机税务</string>
@@ -29,6 +29,11 @@
     <string name="levied_interactive">征纳互动</string>
     <string name="public_platform">公众平台</string>
     <string name="tax_platform">涉税平台</string>
+    <!-- 二级菜单 -->
+    <!-- 信息公开菜单 -->
+    <string name="ip_global_summary">全局概括</string>
+    <string name="ip_tax_guide">办税指南</string>
+    <string name="ip_notice">手机税务</string>
     <!-- 提示信息 -->
     <string name="press_again_to_exit">再按一次退出</string>
     <!-- 门户 -->

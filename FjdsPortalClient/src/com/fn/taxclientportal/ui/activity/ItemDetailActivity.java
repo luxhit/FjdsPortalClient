@@ -27,7 +27,7 @@ public class ItemDetailActivity extends TaxBasicActivity {
 
 		String title = intent.getStringExtra(TaxConstants.Item.TITLE);
 		String pulisDate = intent.getStringExtra(TaxConstants.Item.PULISH_DATE);
-		String id = intent.getStringExtra(TaxConstants.Item.ID);
+		String url = intent.getStringExtra(TaxConstants.Item.URL);
 
 		aquery.id(R.id.title_textview).text(title);
 		aquery.id(R.id.date_textview).text(pulisDate);
@@ -35,8 +35,8 @@ public class ItemDetailActivity extends TaxBasicActivity {
 		webView.getSettings().setJavaScriptEnabled(true);
 
 		aquery.id(R.id.loading_progress).visible();
-		Log.i(TAG, "url:" + TaxConstants.Url.ARTICLE_URL_PREFIX + id);
-		aquery.ajax(TaxConstants.Url.ARTICLE_URL_PREFIX + id, String.class,
+		Log.i(TAG, "url:" + url);
+		aquery.ajax(url, String.class,
 				new AjaxCallback<String>() {
 					@Override
 					public void callback(String url, String html,

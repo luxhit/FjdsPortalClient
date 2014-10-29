@@ -68,7 +68,7 @@ public class LoadRSSFeed extends AsyncTask<Void, Void, Void> {
 //				R.style.AlertBox));
 		refreshDialog = new ProgressDialog(this.parent);
 		// Inform of the refresh
-		refreshDialog.setMessage("Loading feed...");
+		refreshDialog.setMessage("加载中");
 		// Spin the wheel whilst the dialog exists
 		refreshDialog.setIndeterminate(false);
 		// Don't exit the dialog when the screen is touched

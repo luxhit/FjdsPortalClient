@@ -7,6 +7,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,24 +26,25 @@ import android.util.Log;
  *
  */
 public final class AppUtil {
-	
+
 	/**
 	 * 取文章id
+	 * 
 	 * @param text
 	 * @return
 	 */
-	public static String getArticleId (String text) {
+	public static String getArticleId(String text) {
 		String id = null;
-		
+
 		if (text != null) {
 			Pattern p = Pattern.compile("(.*/)([0-9]+)(.htm)");
 			Matcher m = p.matcher(text);
-			
+
 			if (m.find()) {
 				return m.group(2);
 			}
 		}
-		
+
 		return id;
 	}
 
@@ -138,4 +143,25 @@ public final class AppUtil {
 		InputStream is = context.getResources().openRawResource(resId);
 		return BitmapFactory.decodeStream(is, null, opt);
 	}
+
+	/**
+	 * 获取ip
+	 * @return
+	 */
+	public static String getIpAddress() {
+	      try {
+	         for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+	            NetworkInterface intf = en.nextElement();
+	            for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+	               InetAddress inetAddress = enumIpAddr.nextElement();
+	               if (!inetAddress.isLoopbackAddress()) {
+	                  return inetAddress.getHostAddress().toString();
+	               }
+	            }
+	         }
+	      } catch (SocketException e) {
+	        // Log.e(Constants.LOG_TAG, e.getMessage(), e);
+	      }
+	      return null;
+	   }
 }

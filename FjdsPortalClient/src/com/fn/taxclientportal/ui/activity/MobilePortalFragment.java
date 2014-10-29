@@ -3,14 +3,12 @@
  */
 package com.fn.taxclientportal.ui.activity;
 
-import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_GUIDE;
 import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_HUMAN_INFO;
+import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_INFORMATION_PUBLIC;
 import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_NEWS;
-import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_NOTICE;
 import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_ORG_INCOME;
 import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_PLAN_SUMMARY;
 import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_POLICY;
-import static com.fn.taxclientportal.ui.app.TaxConstants.App.MOBILE_PORTAL_SUMMARY;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +33,6 @@ import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.fn.taxclientportal.ui.app.Item;
 import com.fn.taxclientportal.ui.app.TaxAppContext;
-import com.fn.taxclientportal.ui.app.TaxConstants;
 import com.fn.taxclientportal.ui.task.LoadRSSFeed;
 
 /**
@@ -48,22 +45,19 @@ public class MobilePortalFragment extends SherlockFragment {
 
 	private GridView gridView;
 
-	private int[] images = { R.drawable.receipt_query,
-			R.drawable.receipt_getawards, R.drawable.tax_firm_mix,
-			R.drawable.tax_12366_advisory, R.drawable.tax_weixin,
-			R.drawable.policy_law, R.drawable.policy_law, R.drawable.policy_law };
-	private String[] titles = { "新闻动态", "全局概括", "办税指南", "通知公告", "政策法规", "组织收入",
-			"计划总结", "人事信息" };
-	private int[] ids = { MOBILE_PORTAL_NEWS, MOBILE_PORTAL_SUMMARY,
-			MOBILE_PORTAL_GUIDE, MOBILE_PORTAL_NOTICE, MOBILE_PORTAL_POLICY,
-			MOBILE_PORTAL_ORG_INCOME, MOBILE_PORTAL_PLAN_SUMMARY,
-			MOBILE_PORTAL_HUMAN_INFO };
+	private int[] images = { R.drawable.receipt_query, R.drawable.tax_firm_mix,
+			R.drawable.tax_12366_advisory, R.drawable.policy_law,
+			R.drawable.policy_law, R.drawable.policy_law };
+	private String[] titles = { "新闻动态", "信息公开", "政策法规", "组织收入", "计划总结", "人事信息" };
+	private int[] ids = { MOBILE_PORTAL_NEWS, MOBILE_PORTAL_INFORMATION_PUBLIC,
+			MOBILE_PORTAL_POLICY, MOBILE_PORTAL_ORG_INCOME,
+			MOBILE_PORTAL_PLAN_SUMMARY, MOBILE_PORTAL_HUMAN_INFO };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.public_service_grid_layout,
-				container, false);
+		final View rootView = inflater.inflate(
+				R.layout.public_service_grid_layout, container, false);
 
 		gridView = (GridView) rootView
 				.findViewById(R.id.public_service_gridview);
@@ -80,39 +74,53 @@ public class MobilePortalFragment extends SherlockFragment {
 				case MOBILE_PORTAL_NEWS:
 					new LoadRSSFeed(
 							getActivity(),
-							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131012247341&rssType=AR&start=1&len=10&containAttach=true")
+							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131012472674&rssType=AR&start=1&len=10&containAttach=true")
 							.execute();
 					break;
-				case MOBILE_PORTAL_SUMMARY:
-					new LoadRSSFeed(
-							getActivity(),
-							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131012247341&rssType=AR&start=1&len=10&containAttach=true")
-							.execute();
+				case MOBILE_PORTAL_INFORMATION_PUBLIC:
+					startActivity(new Intent(getActivity(),
+							InformationPublicActivity.class));
 
 					break;
-				case MOBILE_PORTAL_GUIDE:
-					new LoadRSSFeed(
-							getActivity(),
-							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131012755980&rssType=AR&start=1&len=10&containAttach=true")
-							.execute();
 				case MOBILE_PORTAL_POLICY:
 					new LoadRSSFeed(
 							getActivity(),
 							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=2014012214000051&rssType=AR&start=1&len=10&containAttach=true")
 							.execute();
 					break;
-					default :
-						Intent i = new Intent(Intent.ACTION_SEND);
-						i.setType("message/rfc822"); // 真机
-						i.putExtra(Intent.EXTRA_EMAIL,
-								new String[] { "fjds2014@126.com" });
-						i.putExtra(Intent.EXTRA_SUBJECT, "test");
-						i.putExtra(Intent.EXTRA_TEXT, "test");
-						try {
-							TaxAppContext.currentActivity().startActivity(Intent.createChooser(i, "发送错误报告"));
-					    } catch (android.content.ActivityNotFoundException ex) {
-					        Toast.makeText(TaxAppContext.currentActivity(), "No email clients installed.", Toast.LENGTH_SHORT).show();
-					    }
+				case MOBILE_PORTAL_ORG_INCOME:
+					new LoadRSSFeed(
+							getActivity(),
+							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131029000008&rssType=AR&start=1&len=10&containAttach=true")
+							.execute();
+					break;
+				case MOBILE_PORTAL_PLAN_SUMMARY:
+					new LoadRSSFeed(
+							getActivity(),
+							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131029000007&rssType=AR&start=1&len=10&containAttach=true")
+							.execute();
+					break;
+				case MOBILE_PORTAL_HUMAN_INFO:
+					new LoadRSSFeed(
+							getActivity(),
+							"http://www.fj-l-tax.gov.cn/rss.sp?act=getRssData&id=20131029000004&rssType=AR&start=1&len=10&containAttach=true")
+							.execute();
+					break;
+				default:
+					Intent i = new Intent(Intent.ACTION_SEND);
+					i.setType("message/rfc822"); // 真机
+					i.putExtra(Intent.EXTRA_EMAIL,
+							new String[] { "fjds2014@126.com" });
+					i.putExtra(Intent.EXTRA_SUBJECT, "test");
+					i.putExtra(Intent.EXTRA_TEXT, "test");
+					try {
+						TaxAppContext.currentActivity().startActivity(
+								Intent.createChooser(i, "发送错误报告"));
+					} catch (android.content.ActivityNotFoundException ex) {
+						Toast.makeText(TaxAppContext.currentActivity(),
+								"No email clients installed.",
+								Toast.LENGTH_SHORT).show();
+					}
 				}
 
 			}

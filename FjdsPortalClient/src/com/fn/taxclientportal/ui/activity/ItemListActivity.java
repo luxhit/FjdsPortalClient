@@ -25,7 +25,7 @@ import com.fn.taxclientportal.ui.util.RSSUtil;
  * @author luxiang
  *
  */
-public class ItemListActivity extends SherlockActivity {
+public class ItemListActivity extends TaxBasicActivity {
 	// Check if we refreshed
 	private boolean isRefresh = false;
 	// The adapter for the list
@@ -76,7 +76,7 @@ public class ItemListActivity extends SherlockActivity {
 						((TextView) arg1.findViewById(R.id.title)).getText());
 				intent.putExtra(TaxConstants.Item.PULISH_DATE,
 						((TextView) arg1.findViewById(R.id.date)).getText());
-				intent.putExtra(TaxConstants.Item.ID, arg1.getTag().toString());
+				intent.putExtra(TaxConstants.Item.URL, arg1.getTag().toString());
 				startActivity(intent);
 			}
 		});
