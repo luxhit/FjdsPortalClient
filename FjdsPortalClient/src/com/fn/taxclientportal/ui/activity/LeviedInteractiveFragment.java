@@ -35,11 +35,8 @@ public class LeviedInteractiveFragment extends SherlockFragment {
 	private GridView gridView;
 
 	private int[] images = { R.drawable.receipt_query,
-			R.drawable.receipt_getawards, R.drawable.tax_firm_mix,
-			R.drawable.tax_12366_advisory, R.drawable.tax_weixin,
-			R.drawable.policy_law };
-	private String[] titles = { "12366咨询", "全局概括", "税企通", "12366咨询", "地税微信",
-			"政策法规" };
+			R.drawable.receipt_getawards};
+	private String[] titles = { "12366咨询", "咨询热点" };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -198,33 +198,6 @@ public class MainActivity extends TaxBasicFragmentActivity {
 		aquery.id(R.id.image_viewpager).getView();
 
 		mListImageViews = new ArrayList<ImageView>(5);
-		/*
-		 * final String[] mainImageFilePaths = TaxAppContext.mainImageFilePaths;
-		 * 
-		 * for (String imageFilePath : mainImageFilePaths) { ImageView iv = new
-		 * ImageView(MainActivity.this); Log.d(TAG, "imageFilePath:" +
-		 * imageFilePath);
-		 * 
-		 * if (imageFilePath != null) { File imgFile = new File(imageFilePath);
-		 * if (imgFile.exists()) {
-		 * 
-		 * // AppUtil.scaleImage(imageFilePath, //
-		 * mImageViewPager.getMeasuredWidth(), //
-		 * mImageViewPager.getMeasuredHeight(), imageFilePath); Log.i(TAG,
-		 * "width:" + mImageViewPager.getMeasuredWidth() + ", height:" +
-		 * mImageViewPager.getMeasuredHeight()); Bitmap bitmapOriginal =
-		 * BitmapFactory.decodeFile(imgFile .getAbsolutePath());
-		 * 
-		 * Log.i(TAG, "image width:" + bitmapOriginal.getWidth() + ", height:" +
-		 * bitmapOriginal.getHeight()); iv.setScaleType(ScaleType.CENTER);
-		 * iv.setImageBitmap(AppUtil.adaptive(bitmapOriginal,
-		 * mImageViewPager.getMeasuredWidth(),
-		 * mImageViewPager.getMeasuredHeight())); // bitmapOriginal.recycle(); }
-		 * // iv.setBackgroundDrawable(Drawable.createFromPath(imageFilePath));
-		 * }
-		 * 
-		 * mListImageViews.add(iv); }
-		 */
 		int[] imageIds = { R.drawable.main_image0, R.drawable.main_image1,
 				R.drawable.main_image2, R.drawable.main_image3,
 				R.drawable.main_image4 };
