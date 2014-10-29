@@ -82,33 +82,49 @@ public class SplashScreenActivity extends TaxBasicActivity {
 
 				Log.d(TAG, "map:" + map.toString());
 
-				aquery.ajax(TaxConstants.Url.API_URL, map, JSONObject.class,
-						new AjaxCallback<JSONObject>() {
+				if (!TaxAppContext.isDebug) {
+					aquery.ajax(TaxConstants.Url.API_URL, map,
+							JSONObject.class, new AjaxCallback<JSONObject>() {
 
-							@Override
-							public void callback(String url, JSONObject object,
-									AjaxStatus status) {
-								String json = object.toString();
-								Log.d(TAG, "json:" + json);
-								ResEnter re = new Gson().fromJson(json,
-										ResEnter.class);
-								// 成功
-								if (re.getCode() == 0) {
-									// 滚动图片列表
-									List<Gdtp> gdtpList = re.getGdtpList();
-									// 客户端参数列表
-									List<Khdcs> khdcsList = re.getKhdcsList();
-									// 模块列表
-									List<PcModuleCode> pcModuleCodeList = re
-											.getPcModuleCodeList();
-									// 通知公告列表
-									List<Tzgg> tzggList = re.getTzggList();
+								@Override
+								public void callback(String url,
+										JSONObject object, AjaxStatus status) {
+									String json = object.toString();
+									Log.d(TAG, "json:" + json);
+									ResEnter re = new Gson().fromJson(json,
+											ResEnter.class);
+									// 成功
+									if (re.getCode() == 0) {
+										// 滚动图片列表
+										List<Gdtp> gdtpList = re.getGdtpList();
+
+										for (Gdtp gdtp : gdtpList) {
+
+										}
+
+										// 客户端参数列表
+										List<Khdcs> khdcsList = re
+												.getKhdcsList();
+										for (Khdcs khdcs : khdcsList) {
+
+										}
+										// 模块列表
+										List<PcModuleCode> pcModuleCodeList = re
+												.getPcModuleCodeList();
+										for (PcModuleCode pcModuleCode : pcModuleCodeList) {
+
+										}
+										// 通知公告列表
+										List<Tzgg> tzggList = re.getTzggList();
+										for (Tzgg tzgg : tzggList) {
+
+										}
+									}
+									SplashScreenActivity.this.finish();
 								}
-								SplashScreenActivity.this.finish();
-							}
 
-						});
-
+							});
+				}
 			}
 
 		}, 3000l);
