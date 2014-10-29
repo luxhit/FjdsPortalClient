@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.fn.taxclientportal.support.rss.parse.RSSFeed;
 import com.fn.taxclientportal.ui.activity.R;
+import com.fn.taxclientportal.ui.app.TaxConstants;
 import com.fn.taxclientportal.ui.util.AppUtil;
 
 /**
@@ -65,9 +66,14 @@ public class ItemListAdapter extends BaseAdapter {
 		// Bit of formatting for adding the author
 		((TextView)listItem.findViewById(R.id.date)).setText(feed.getItem(position).getDate());
 		// Return the new list item
-		// 取文章id
-		String id = AppUtil.getArticleId(feed.getItem(position).getURL());
-		listItem.setTag(id);
+		// 取地址
+		String url = feed.getItem(position).getURL();
+		if (url.indexOf("http:") == -1) {
+			String id = AppUtil.getArticleId(url);
+			url = TaxConstants.Url.ARTICLE_URL_PREFIX + id;
+		}
+		
+		listItem.setTag(url);
 		return listItem;
 	}
 }
